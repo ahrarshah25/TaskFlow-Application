@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - TaskFlow</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/Admin Dashboard/admin.css" />
+    <link rel="stylesheet" href="/SweetAlert/swal.css" />
+  </head>
+  <body>
+    <div class="admin-container">
+      <aside class="admin-sidebar">
+        <div class="sidebar-header">
+          <a href="/" class="logo">
+            <i class="fas fa-tasks"></i>
+            <span>TaskFlow</span>
+          </a>
+          <h2>Admin Panel</h2>
+        </div>
+
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item active">
+            <i class="fas fa-users"></i>
+            <span>User Management</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="fas fa-chart-bar"></i>
+            <span>Analytics</span>
+          </a>
+          <a href="#" class="nav-item">
+            <i class="fas fa-cog"></i>
+            <span>Settings</span>
+          </a>
+          <a href="/" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Back to Home</span>
+          </a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="admin-profile">
+            <div class="profile-avatar">
+              <i class="fas fa-user-shield"></i>
+            </div>
+            <div class="profile-info">
+              <h4>Admin User</h4>
+              <p>Administrator</p>
+            </div>
+          </div>
+          <button class="btn-logout" id="logoutBtn">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </button>
+        </div>
+      </aside>
+
+      <main class="admin-main">
+        <header class="admin-header">
+          <div class="header-left">
+            <h1>User Management</h1>
+            <p>Manage and verify user accounts</p>
+          </div>
+          <div class="header-right">
+            <div class="stats-card">
+              <i class="fas fa-user-check"></i>
+              <div>
+                <h3 id="verifiedCount">0</h3>
+                <p>Verified Users</p>
+              </div>
+            </div>
+            <div class="stats-card">
+              <i class="fas fa-user-clock"></i>
+              <div>
+                <h3 id="unverifiedCount">0</h3>
+                <p>Unverified Users</p>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="admin-content">
+          <div class="content-header">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search users by name or email..."
+              />
+            </div>
+            <div class="filters">
+              <select id="filterSelect">
+                <option value="all">All Users</option>
+                <option value="verified">Verified Only</option>
+                <option value="unverified">Unverified Only</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="users-table-container">
+            <table class="users-table">
+              <thead>
+                <tr>
+                  <th>Full Name</th>
+                  <th>Email Address</th>
+                  <th>Verification Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="users"></tbody>
+            </table>
+          </div>
+
+          <div class="no-users" id="noUsersMessage" style="display: none">
+            <i class="fas fa-users-slash"></i>
+            <h3>No Users Found</h3>
+            <p>There are no users in the system yet.</p>
+          </div>
+
+          <div class="loading-spinner" id="loadingSpinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Loading users...</p>
+          </div>
+        </div>
+
+        <footer class="admin-footer">
+          <p>
+            &copy; TaskFlow | 2026 - <span id="currentYear">2026</span> | All
+            Rights Reserved
+          </p>
+          <p>
+            Made By
+            <a href="https://ahrar-shah.vercel.app" target="_blank"
+              >Ahrar Shah</a
+            >
+          </p>
+        </footer>
+      </main>
+    </div>
+  </body>
+  <script type="module" src="/Admin Dashboard/admin.js"></script>
+</html>

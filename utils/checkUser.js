@@ -17,6 +17,7 @@ const checkUser = () => {
     if (user) {
       handleRedirect(user.uid);
     }
+    Swal.close();
   });
 };
 
